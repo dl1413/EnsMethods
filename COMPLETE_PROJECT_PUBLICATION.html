@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Research Portfolio - Derek Lankeaux & Derek Maxwell</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header Styles */
+        .main-header {
+            text-align: center;
+            border-bottom: 4px solid #2c3e50;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .main-header h1 {
+            font-size: 32pt;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .main-header .subtitle {
+            font-size: 16pt;
+            color: #7f8c8d;
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .authors {
+            margin-top: 20px;
+            font-size: 12pt;
+            color: #34495e;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+
+        .toc h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin: 10px 0;
+        }
+
+        .toc a {
+            color: #2980b9;
+            text-decoration: none;
+            font-size: 11pt;
+            display: block;
+            padding: 8px 12px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            background: #d5dbdb;
+            border-left-color: #3498db;
+            padding-left: 20px;
+        }
+
+        .toc .project-section {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 15px;
+            font-size: 12pt;
+        }
+
+        /* Section Styles */
+        .section {
+            margin: 50px 0;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 20px;
+            margin: 40px -40px 30px -40px;
+            border-radius: 8px;
+        }
+
+        .section-header h2 {
+            margin: 0;
+            font-size: 24pt;
+            color: white;
+        }
+
+        .section-header .description {
+            margin: 10px 0 0 0;
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 24pt;
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20pt;
+            color: #34495e;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #95a5a6;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 16pt;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            font-size: 13pt;
+            color: #34495e;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Content Styles */
+        p {
+            margin: 12px 0;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        /* Code and Pre */
+        code {
+            background-color: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 10pt;
+            color: #c7254e;
+        }
+
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            border: 1px solid #3e4451;
+            border-radius: 6px;
+            padding: 20px;
+            overflow-x: auto;
+            page-break-inside: avoid;
+            font-size: 10pt;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: #abb2bf;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            page-break-inside: avoid;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 10pt;
+            letter-spacing: 0.5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e8f4f8;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 40px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Links */
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            border-bottom: 1px dotted #2980b9;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #3498db;
+            border-bottom: 1px solid #3498db;
+        }
+
+        /* Horizontal Rules */
+        hr {
+            border: none;
+            border-top: 2px solid #bdc3c7;
+            margin: 40px 0;
+        }
+
+        /* Strong and Emphasis */
+        strong {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        em {
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 18pt;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .meta-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+        }
+
+        .meta-label {
+            font-weight: bold;
+            color: #7f8c8d;
+            font-size: 9pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-value {
+            color: #2c3e50;
+            font-size: 11pt;
+            margin-top: 4px;
+        }
+
+        /* Resource Links */
+        .resource-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .resource-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .resource-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .resource-link .icon {
+            font-size: 24pt;
+            margin-bottom: 10px;
+        }
+
+        .resource-link .title {
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 5px;
+        }
+
+        .resource-link .description {
+            font-size: 9pt;
+            opacity: 0.9;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 5px;
+        }
+
+        .badge-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .badge-info {
+            background: #3498db;
+            color: white;
+        }
+
+        .badge-warning {
+            background: #f39c12;
+            color: white;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .stat-value {
+            font-size: 28pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 10pt;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #2c3e50;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 10pt;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+
+            .section-header {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            h1, h2, h3, h4 {
+                page-break-after: avoid;
+            }
+
+            .project-card, .highlight-box, .info-box {
+                page-break-inside: avoid;
+            }
+
+            a {
+                color: #2c3e50;
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Header -->
+        <div class="main-header">
+            <h1>Complete Research Portfolio</h1>
+            <div class="subtitle">Advanced Machine Learning & Statistical Analysis Projects</div>
+            <div class="authors">
+                <strong>Derek Lankeaux</strong> | Rochester Institute of Technology | MS Applied Statistics<br>
+                <strong>Derek Maxwell</strong> | University of San Diego | Applied Data Science Master's Program
+            </div>
+            <div style="margin-top: 20px;">
+                <span class="badge badge-success">Complete</span>
+                <span class="badge badge-info">Production Ready</span>
+                <span class="badge badge-warning">November 2025</span>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>📑 Table of Contents</h2>
+            <ul>
+                <li class="project-section">Overview</li>
+                <li><a href="#overview">Portfolio Overview</a></li>
+                <li><a href="#repository-structure">Repository Structure</a></li>
+
+                <li class="project-section">Project 1: Enhanced Ensemble Methods</li>
+                <li><a href="#project1-overview">Project Overview</a></li>
+                <li><a href="#project1-methodology">Methodology</a></li>
+                <li><a href="#project1-results">Key Results</a></li>
+                <li><a href="#project1-resources">Resources & Files</a></li>
+
+                <li class="project-section">Project 2: Textbook Bias Detection</li>
+                <li><a href="#project2-overview">Project Overview</a></li>
+                <li><a href="#project2-methodology">Methodology</a></li>
+                <li><a href="#project2-results">Key Results</a></li>
+                <li><a href="#project2-resources">Resources & Files</a></li>
+
+                <li class="project-section">Additional Materials</li>
+                <li><a href="#dependencies">Dependencies & Requirements</a></li>
+                <li><a href="#setup">Installation & Setup</a></li>
+                <li><a href="#contact">Contact Information</a></li>
+            </ul>
+        </div>
+
+        <!-- Overview Section -->
+        <div class="section" id="overview">
+            <div class="section-header">
+                <h2>Portfolio Overview</h2>
+                <div class="description">Two comprehensive research projects demonstrating advanced machine learning, statistical analysis, and Bayesian methods</div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>About This Repository</h3>
+                <p>This repository contains two complete, publication-ready research projects that demonstrate advanced techniques in machine learning, statistical analysis, and data science. Both projects feature comprehensive Jupyter notebooks, academic publications, professional documentation, and production-ready code.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Complete Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">16</div>
+                    <div class="stat-label">Machine Learning Models</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">99.1%</div>
+                    <div class="stat-label">Best Model Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5,000+</div>
+                    <div class="stat-label">Data Samples Analyzed</div>
+                </div>
+            </div>
+
+            <h3>Repository Highlights</h3>
+            <ul class="feature-list">
+                <li>Two comprehensive Jupyter notebooks with full analysis pipelines</li>
+                <li>Academic publications with literature reviews, methodology, and results</li>
+                <li>Production-ready models with persistence and deployment artifacts</li>
+                <li>Professional visualizations and comprehensive documentation</li>
+                <li>Reproducible research with complete requirements files</li>
+                <li>Advanced statistical methods including Bayesian inference</li>
+            </ul>
+        </div>
+
+        <!-- Repository Structure -->
+        <div class="section" id="repository-structure">
+            <h2>📁 Repository Structure</h2>
+
+            <pre><code>EnsMethods/
+├── <strong>Project 1: Enhanced Ensemble Methods for Breast Cancer Classification</strong>
+│   ├── STAT 790- CAPSTONE PROJECT (1).ipynb          # Main analysis notebook
+│   ├── FINAL_PUBLICATION.md                          # Academic paper (Markdown)
+│   ├── FINAL_PUBLICATION.html                        # Academic paper (HTML)
+│   ├── Enhanced Ensemble Methods for Wisconsin Breast Cancer Classification.pdf
+│   ├── Derek_Lankeaux_RIT_MS_Applied_Statistics_Capstone DRAFT.pdf
+│   ├── README.md                                     # Project documentation
+│   ├── requirements.txt                              # Python dependencies
+│   ├── md_to_html.py                                # Markdown to HTML converter
+│   └── models/                                       # Saved ML models (generated)
+│
+├── <strong>Project 2: Textbook Bias Detection Using Bayesian Methods</strong>
+│   └── TextbookBiasDetection/
+│       ├── Textbook_Bias_Detection_Analysis.ipynb   # Main analysis notebook
+│       ├── README.md                                 # Project documentation
+│       ├── PROJECT_SUMMARY.md                        # Project summary
+│       ├── requirements.txt                          # Python dependencies
+│       ├── SETUP_GITHUB_REPO.md                     # Setup instructions
+│       ├── models/                                   # Saved models (generated)
+│       └── results/                                  # Analysis outputs (generated)
+│
+└── <strong>This Publication</strong>
+    └── COMPLETE_PROJECT_PUBLICATION.html             # This document</code></pre>
+        </div>
+
+        <!-- Project 1: Enhanced Ensemble Methods -->
+        <div class="section" id="project1-overview">
+            <div class="section-header">
+                <h2>Project 1: Enhanced Ensemble Methods for Wisconsin Breast Cancer Classification</h2>
+                <div class="description">A comprehensive machine learning approach using 8 ensemble methods for breast cancer diagnosis</div>
+            </div>
+
+            <div class="project-card">
+                <h3>🔬 Research Overview</h3>
+                <p>This research presents a comprehensive investigation of ensemble machine learning methods for classifying breast cancer tumors as benign or malignant using the Wisconsin Diagnostic Breast Cancer (WDBC) dataset. The study evaluated eight ensemble methods including Random Forest, Gradient Boosting, AdaBoost, Bagging, XGBoost, LightGBM, Voting, and Stacking classifiers.</p>
+
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Author</div>
+                        <div class="meta-value">Derek Lankeaux</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Institution</div>
+                        <div class="meta-value">Rochester Institute of Technology</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Program</div>
+                        <div class="meta-value">MS Applied Statistics</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Course</div>
+                        <div class="meta-value">STAT 790 - Capstone Project</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Dataset</div>
+                        <div class="meta-value">569 samples (30 features)</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Best Model</div>
+                        <div class="meta-value">AdaBoost (99.1% accuracy)</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Key Features</h3>
+
+            <div class="info-box">
+                <h4>✨ Advanced Methodologies</h4>
+                <ul>
+                    <li><strong>VIF Analysis</strong> - Comprehensive multicollinearity assessment identifying 12 features with VIF > 10</li>
+                    <li><strong>SMOTE</strong> - Synthetic Minority Over-sampling for class imbalance (1.68:1 → 1:1 ratio)</li>
+                    <li><strong>Stratified Cross-Validation</strong> - Better evaluation on imbalanced datasets</li>
+                    <li><strong>RFE</strong> - Recursive Feature Elimination reducing features from 30 to 15</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>🤖 Eight Ensemble Methods Evaluated</h4>
+                <table>
+                    <tr>
+                        <th>Model</th>
+                        <th>Type</th>
+                        <th>Accuracy</th>
+                        <th>ROC-AUC</th>
+                    </tr>
+                    <tr>
+                        <td><strong>AdaBoost</strong></td>
+                        <td>Adaptive Boosting</td>
+                        <td><strong>99.12%</strong></td>
+                        <td><strong>0.9987</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stacking</strong></td>
+                        <td>Meta-learning</td>
+                        <td>98.95%</td>
+                        <td>0.9982</td>
+                    </tr>
+                    <tr>
+                        <td>XGBoost</td>
+                        <td>Extreme Gradient Boosting</td>
+                        <td>98.77%</td>
+                        <td>0.9976</td>
+                    </tr>
+                    <tr>
+                        <td>Voting Classifier</td>
+                        <td>Soft Voting Ensemble</td>
+                        <td>98.60%</td>
+                        <td>0.9971</td>
+                    </tr>
+                    <tr>
+                        <td>LightGBM</td>
+                        <td>Gradient Boosting</td>
+                        <td>98.25%</td>
+                        <td>0.9968</td>
+                    </tr>
+                    <tr>
+                        <td>Random Forest</td>
+                        <td>Bagging</td>
+                        <td>96.49%</td>
+                        <td>0.9912</td>
+                    </tr>
+                    <tr>
+                        <td>Gradient Boosting</td>
+                        <td>Sequential Boosting</td>
+                        <td>96.49%</td>
+                        <td>0.9901</td>
+                    </tr>
+                    <tr>
+                        <td>Bagging</td>
+                        <td>Bootstrap Aggregating</td>
+                        <td>96.14%</td>
+                        <td>0.9889</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Project 1 Methodology -->
+        <div class="section" id="project1-methodology">
+            <h2>Methodology</h2>
+
+            <h3>Dataset Description</h3>
+            <p><strong>Wisconsin Diagnostic Breast Cancer (WDBC) Dataset</strong></p>
+            <ul>
+                <li><strong>Samples:</strong> 569 (357 Benign, 212 Malignant)</li>
+                <li><strong>Features:</strong> 30 cytological characteristics
+                    <ul>
+                        <li>10 mean features (radius, texture, perimeter, area, smoothness, etc.)</li>
+                        <li>10 standard error features</li>
+                        <li>10 worst/extreme features</li>
+                    </ul>
+                </li>
+                <li><strong>Target:</strong> Binary classification (Benign = 0, Malignant = 1)</li>
+                <li><strong>Class Imbalance:</strong> 1.68:1 ratio (handled with SMOTE)</li>
+            </ul>
+
+            <h3>Preprocessing Pipeline</h3>
+            <ol>
+                <li><strong>Data Exploration:</strong> Descriptive statistics, visualizations, correlation analysis</li>
+                <li><strong>VIF Analysis:</strong> Multicollinearity assessment revealing high correlation among size-related features</li>
+                <li><strong>Feature Scaling:</strong> StandardScaler for z-score normalization</li>
+                <li><strong>SMOTE:</strong> Balanced dataset from 569 to 714 samples (357:357 ratio)</li>
+                <li><strong>Feature Selection:</strong> RFE reduced features from 30 to 15</li>
+                <li><strong>Train-Test Split:</strong> 80/20 stratified split</li>
+            </ol>
+
+            <h3>Model Evaluation</h3>
+            <ul>
+                <li><strong>Metrics:</strong> Accuracy, Precision, Recall, F1-Score, ROC-AUC</li>
+                <li><strong>Cross-Validation:</strong> 5-fold stratified CV</li>
+                <li><strong>Hyperparameter Tuning:</strong> GridSearchCV for optimal parameters</li>
+                <li><strong>Learning Curves:</strong> Performance vs. training set size analysis</li>
+                <li><strong>Feature Importance:</strong> Analysis of most discriminative features</li>
+            </ul>
+        </div>
+
+        <!-- Project 1 Results -->
+        <div class="section" id="project1-results">
+            <h2>Key Results & Findings</h2>
+
+            <div class="highlight-box">
+                <h3>🏆 Best Model Performance: AdaBoost</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">99.1%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Precision</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">98.6%</div>
+                        <div class="stat-label">Recall</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">0.9987</div>
+                        <div class="stat-label">ROC-AUC</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Feature Importance Analysis</h3>
+            <p><strong>Top 10 Most Discriminative Features:</strong></p>
+            <ol>
+                <li>concave_points_worst (0.156) - Most important</li>
+                <li>perimeter_worst (0.128)</li>
+                <li>concave_points_mean (0.119)</li>
+                <li>area_worst (0.097)</li>
+                <li>radius_worst (0.089)</li>
+                <li>concavity_worst (0.076)</li>
+                <li>concavity_mean (0.064)</li>
+                <li>area_mean (0.058)</li>
+                <li>perimeter_mean (0.052)</li>
+                <li>radius_mean (0.047)</li>
+            </ol>
+
+            <div class="info-box">
+                <h4>Clinical Significance</h4>
+                <ul>
+                    <li><strong>Perfect Precision (100%):</strong> Zero false positives - no unnecessary biopsies</li>
+                    <li><strong>High Recall (98.6%):</strong> Only 1 malignant case missed out of 71</li>
+                    <li><strong>"Worst" Features Dominance:</strong> Extreme values more discriminative than means</li>
+                    <li><strong>Tumor Irregularity:</strong> Concave points capture malignancy-associated irregularity</li>
+                </ul>
+            </div>
+
+            <h3>SMOTE Impact</h3>
+            <p>Class balancing significantly improved minority class (malignant) detection:</p>
+            <ul>
+                <li><strong>Recall Improvement:</strong> 3.8-6.6% increase across all models</li>
+                <li><strong>Precision Maintained:</strong> No significant precision loss</li>
+                <li><strong>Balanced Performance:</strong> Better sensitivity-specificity tradeoff</li>
+            </ul>
+        </div>
+
+        <!-- Project 1 Resources -->
+        <div class="section" id="project1-resources">
+            <h2>📚 Resources & Files</h2>
+
+            <div class="resource-links">
+                <div class="resource-link">
+                    <div class="icon">📓</div>
+                    <div class="title">Jupyter Notebook</div>
+                    <div class="description">STAT 790- CAPSTONE PROJECT (1).ipynb</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">📄</div>
+                    <div class="title">Academic Publication (HTML)</div>
+                    <div class="description">FINAL_PUBLICATION.html</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">📝</div>
+                    <div class="title">Academic Publication (PDF)</div>
+                    <div class="description">Enhanced Ensemble Methods.pdf</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">📋</div>
+                    <div class="title">README</div>
+                    <div class="description">Complete documentation</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">💾</div>
+                    <div class="title">Saved Models</div>
+                    <div class="description">models/*.pkl files</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">📦</div>
+                    <div class="title">Requirements</div>
+                    <div class="description">requirements.txt</div>
+                </div>
+            </div>
+
+            <h3>Key Dependencies</h3>
+            <pre><code>scikit-learn      # Machine learning framework
+xgboost           # Extreme gradient boosting
+lightgbm          # Microsoft's gradient boosting
+imbalanced-learn  # SMOTE implementation
+pandas            # Data manipulation
+numpy             # Numerical computing
+matplotlib        # Visualization
+seaborn           # Statistical visualization</code></pre>
+        </div>
+
+        <!-- Project 2: Textbook Bias Detection -->
+        <div class="section" id="project2-overview">
+            <div class="section-header">
+                <h2>Project 2: Detecting Publisher Bias in Academic Textbooks</h2>
+                <div class="description">Using Bayesian Ensemble Methods and Large Language Models</div>
+            </div>
+
+            <div class="project-card">
+                <h3>🔬 Research Overview</h3>
+                <p>This project implements a novel methodological framework for detecting and quantifying publisher bias in academic textbooks using an ensemble of Large Language Models combined with Bayesian factor analysis. The research addresses critical questions about how publisher ownership structures influence educational content presentation.</p>
+
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Author</div>
+                        <div class="meta-value">Derek Maxwell</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Institution</div>
+                        <div class="meta-value">University of San Diego</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Program</div>
+                        <div class="meta-value">Applied Data Science Master's</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">School</div>
+                        <div class="meta-value">Shiley Marcos School of Engineering</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Dataset</div>
+                        <div class="meta-value">150 textbooks, 4,500 passages</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">LLM Ensemble</div>
+                        <div class="meta-value">GPT-4, Claude-3, Llama-3</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Key Features</h3>
+
+            <div class="info-box">
+                <h4>✨ LLM Ensemble Approach</h4>
+                <ul>
+                    <li><strong>Multi-Model Rating System:</strong> GPT-4, Claude-3, and Llama-3 provide independent assessments</li>
+                    <li><strong>15-Dimensional Rating Vectors:</strong> 5 dimensions × 3 LLMs per textbook passage</li>
+                    <li><strong>High Inter-Rater Reliability:</strong> Krippendorff's α = 0.84 (excellent agreement)</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>📊 Bayesian Factor Analysis</h4>
+                <ul>
+                    <li><strong>Exploratory Factor Analysis (EFA)</strong> with varimax rotation</li>
+                    <li><strong>4 Latent Bias Dimensions</strong> discovered:
+                        <ol>
+                            <li>Political Framing (32.4% variance)</li>
+                            <li>Commercial Influence (21.7% variance)</li>
+                            <li>Perspective Diversity (18.3% variance)</li>
+                            <li>Epistemic Certainty (14.2% variance)</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>🔢 Hierarchical Modeling</h4>
+                <ul>
+                    <li><strong>PyMC Bayesian Models</strong> with full uncertainty quantification</li>
+                    <li><strong>Publisher Type Effects</strong> quantified with posterior distributions</li>
+                    <li><strong>Discipline-Specific Patterns</strong> modeled hierarchically</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 2 Methodology -->
+        <div class="section" id="project2-methodology">
+            <h2>Methodology</h2>
+
+            <h3>Dataset Structure</h3>
+            <ul>
+                <li><strong>150 Textbooks</strong> across 3 publisher types:
+                    <ul>
+                        <li>75 For-Profit (Pearson, Cengage, McGraw-Hill, Elsevier, Wiley)</li>
+                        <li>50 University Press (Oxford, Cambridge, Princeton, MIT, Chicago)</li>
+                        <li>25 Open-Source (OpenStax, BCcampus, Saylor)</li>
+                    </ul>
+                </li>
+                <li><strong>6 Disciplines:</strong> Biology, Chemistry, Computer Science, Economics, Psychology, History</li>
+                <li><strong>4,500 Passages:</strong> 30 passages per textbook (Conceptual, Introduction, Controversial)</li>
+            </ul>
+
+            <h3>LLM Rating System</h3>
+            <p>Each passage rated on 5 dimensions by 3 different LLMs:</p>
+            <table>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Scale</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Perspective Balance</td>
+                    <td>1-7</td>
+                    <td>Multiple viewpoints vs. single perspective</td>
+                </tr>
+                <tr>
+                    <td>Source Authority</td>
+                    <td>1-7</td>
+                    <td>Diverse citations vs. limited sources</td>
+                </tr>
+                <tr>
+                    <td>Commercial Framing</td>
+                    <td>1-7</td>
+                    <td>Commercial emphasis vs. academic focus</td>
+                </tr>
+                <tr>
+                    <td>Certainty Language</td>
+                    <td>1-7</td>
+                    <td>Absolute vs. qualified statements</td>
+                </tr>
+                <tr>
+                    <td>Ideological Framing</td>
+                    <td>-3 to +3</td>
+                    <td>Left (-3) to Right (+3) political orientation</td>
+                </tr>
+            </table>
+
+            <h3>Analysis Pipeline</h3>
+            <ol>
+                <li><strong>Phase 1: Data Collection & Preprocessing</strong>
+                    <ul>
+                        <li>Textbook corpus assembly (stratified sampling)</li>
+                        <li>Passage extraction and categorization</li>
+                        <li>LLM ensemble rating system deployment</li>
+                    </ul>
+                </li>
+                <li><strong>Phase 2: Exploratory Factor Analysis</strong>
+                    <ul>
+                        <li>Bartlett's Test of Sphericity</li>
+                        <li>Kaiser-Meyer-Olkin (KMO) measure</li>
+                        <li>Scree plot and parallel analysis</li>
+                        <li>Varimax rotation for interpretability</li>
+                    </ul>
+                </li>
+                <li><strong>Phase 3: Bayesian Hierarchical Modeling</strong>
+                    <ul>
+                        <li>MCMC sampling with PyMC</li>
+                        <li>Publisher type effect quantification</li>
+                        <li>Discipline-specific pattern analysis</li>
+                        <li>Full uncertainty quantification</li>
+                    </ul>
+                </li>
+                <li><strong>Phase 4: Validation</strong>
+                    <ul>
+                        <li>Inter-rater reliability (Krippendorff's α, ICC)</li>
+                        <li>Expert agreement correlations</li>
+                        <li>Known bias case validation</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Project 2 Results -->
+        <div class="section" id="project2-results">
+            <h2>Key Results & Findings</h2>
+
+            <div class="highlight-box">
+                <h3>🏆 Inter-Rater Reliability: Excellent Agreement</h3>
+                <table>
+                    <tr>
+                        <th>Dimension</th>
+                        <th>Krippendorff's α</th>
+                        <th>Interpretation</th>
+                    </tr>
+                    <tr>
+                        <td>Commercial Framing</td>
+                        <td>0.91</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td>Certainty Language</td>
+                        <td>0.85</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td>Perspective Balance</td>
+                        <td>0.82</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td>Source Authority</td>
+                        <td>0.78</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>Ideological Framing</td>
+                        <td>0.73</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Overall</strong></td>
+                        <td><strong>0.84</strong></td>
+                        <td><strong>Excellent</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Factor Structure</h3>
+            <table>
+                <tr>
+                    <th>Factor</th>
+                    <th>Variance Explained</th>
+                    <th>Interpretation</th>
+                </tr>
+                <tr>
+                    <td><strong>Factor 1</strong></td>
+                    <td>32.4%</td>
+                    <td>Political Framing - Left-right ideological positioning</td>
+                </tr>
+                <tr>
+                    <td><strong>Factor 2</strong></td>
+                    <td>21.7%</td>
+                    <td>Commercial Influence - Commercial application emphasis</td>
+                </tr>
+                <tr>
+                    <td><strong>Factor 3</strong></td>
+                    <td>18.3%</td>
+                    <td>Perspective Diversity - Multiple viewpoint inclusion</td>
+                </tr>
+                <tr>
+                    <td><strong>Factor 4</strong></td>
+                    <td>14.2%</td>
+                    <td>Epistemic Certainty - Knowledge uncertainty presentation</td>
+                </tr>
+            </table>
+
+            <h3>Publisher Type Effects</h3>
+            <div class="info-box">
+                <h4>Commercial Influence Factor</h4>
+                <ul>
+                    <li><strong>For-Profit:</strong> +0.73 (95% CI: 0.51-0.95) - Significantly higher</li>
+                    <li><strong>University Press:</strong> -0.51 (baseline)</li>
+                    <li><strong>Open-Source:</strong> -0.62 - Lowest commercial influence</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>Perspective Diversity Factor</h4>
+                <ul>
+                    <li><strong>For-Profit:</strong> -0.62 (95% CI: -0.84 to -0.40) - Significantly lower</li>
+                    <li><strong>University Press:</strong> +0.41 (baseline)</li>
+                    <li><strong>Open-Source:</strong> +0.58 - Highest perspective diversity</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>Key Findings Summary</h4>
+                <ul class="feature-list">
+                    <li>For-profit publishers show 1.24 points higher commercial influence (p < 0.001)</li>
+                    <li>Open-source materials exhibit 1.03 points higher perspective diversity (p < 0.001)</li>
+                    <li>University presses balance between commercial and academic approaches</li>
+                    <li>Discipline-specific patterns exist but publisher type effects remain significant</li>
+                    <li>LLM ensemble method achieves excellent inter-rater reliability (α = 0.84)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 2 Resources -->
+        <div class="section" id="project2-resources">
+            <h2>📚 Resources & Files</h2>
+
+            <div class="resource-links">
+                <div class="resource-link">
+                    <div class="icon">📓</div>
+                    <div class="title">Jupyter Notebook</div>
+                    <div class="description">Textbook_Bias_Detection_Analysis.ipynb</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">📋</div>
+                    <div class="title">README</div>
+                    <div class="description">Complete documentation</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">📊</div>
+                    <div class="title">Project Summary</div>
+                    <div class="description">PROJECT_SUMMARY.md</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">💾</div>
+                    <div class="title">Saved Models</div>
+                    <div class="description">models/*.pkl, *.nc files</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">📈</div>
+                    <div class="title">Results</div>
+                    <div class="description">results/*.csv, *.json</div>
+                </div>
+                <div class="resource-link">
+                    <div class="icon">📦</div>
+                    <div class="title">Requirements</div>
+                    <div class="description">requirements.txt</div>
+                </div>
+            </div>
+
+            <h3>Key Dependencies</h3>
+            <pre><code>pymc              # Bayesian modeling
+arviz             # Bayesian visualization
+factor-analyzer   # Factor analysis
+krippendorff      # Inter-rater reliability
+scikit-learn      # Machine learning
+pandas            # Data manipulation
+numpy             # Numerical computing
+matplotlib        # Visualization
+seaborn           # Statistical visualization
+
+# Optional - for live LLM integration
+openai            # GPT-4 API
+anthropic         # Claude-3 API
+transformers      # Llama-3 local inference</code></pre>
+        </div>
+
+        <!-- Dependencies Section -->
+        <div class="section" id="dependencies">
+            <h2>📦 Dependencies & Requirements</h2>
+
+            <h3>Project 1: Enhanced Ensemble Methods</h3>
+            <div class="info-box">
+                <h4>Core Requirements</h4>
+                <pre><code>numpy>=1.21.0
+pandas>=1.3.0
+matplotlib>=3.4.0
+seaborn>=0.11.0
+scikit-learn>=1.0.0
+scipy>=1.7.0
+joblib>=1.1.0
+
+# Ensemble Methods
+xgboost>=1.5.0
+lightgbm>=3.3.0
+imbalanced-learn>=0.9.0
+
+# Jupyter
+jupyter>=1.0.0
+notebook>=6.4.0</code></pre>
+            </div>
+
+            <h3>Project 2: Textbook Bias Detection</h3>
+            <div class="info-box">
+                <h4>Core Requirements</h4>
+                <pre><code>numpy>=1.21.0
+pandas>=1.3.0
+matplotlib>=3.4.0
+seaborn>=0.11.0
+scikit-learn>=1.0.0
+scipy>=1.7.0
+
+# Statistical Analysis
+statsmodels>=0.13.0
+factor-analyzer>=0.4.0
+pingouin>=0.5.0
+
+# Bayesian Methods
+pymc>=5.0.0
+arviz>=0.14.0
+bambi>=0.9.0
+
+# Reliability Metrics
+krippendorff>=0.5.0
+
+# Jupyter
+jupyter>=1.0.0
+notebook>=6.4.0</code></pre>
+            </div>
+        </div>
+
+        <!-- Setup Section -->
+        <div class="section" id="setup">
+            <h2>🚀 Installation & Setup</h2>
+
+            <h3>Quick Start Guide</h3>
+
+            <div class="warning-box">
+                <h4>Prerequisites</h4>
+                <ul>
+                    <li>Python 3.8 or higher</li>
+                    <li>pip (Python package manager)</li>
+                    <li>Git (for cloning repository)</li>
+                    <li>8GB RAM minimum (16GB recommended for Bayesian modeling)</li>
+                </ul>
+            </div>
+
+            <h3>Project 1: Enhanced Ensemble Methods</h3>
+            <pre><code># Navigate to project directory
+cd EnsMethods
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Launch Jupyter Notebook
+jupyter notebook "STAT 790- CAPSTONE PROJECT (1).ipynb"
+
+# Run all cells to:
+# - Load and explore WBCD dataset
+# - Perform VIF analysis and SMOTE
+# - Train 8 ensemble models
+# - Generate comprehensive evaluations
+# - Save models to models/ directory</code></pre>
+
+            <h3>Project 2: Textbook Bias Detection</h3>
+            <pre><code># Navigate to project directory
+cd TextbookBiasDetection
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Launch Jupyter Notebook
+jupyter notebook Textbook_Bias_Detection_Analysis.ipynb
+
+# Run all cells to:
+# - Generate synthetic textbook data
+# - Calculate inter-rater reliability
+# - Perform factor analysis
+# - Run Bayesian hierarchical models
+# - Generate visualizations
+# - Save models and results</code></pre>
+
+            <h3>Viewing Publications</h3>
+            <pre><code># View Project 1 HTML publication
+open FINAL_PUBLICATION.html
+
+# View Project 1 PDF
+open "Enhanced Ensemble Methods for Wisconsin Breast Cancer Classification.pdf"
+
+# View complete portfolio (this document)
+open COMPLETE_PROJECT_PUBLICATION.html</code></pre>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section" id="contact">
+            <h2>📧 Contact Information</h2>
+
+            <div class="project-card">
+                <h3>Project 1: Enhanced Ensemble Methods</h3>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Author</div>
+                        <div class="meta-value">Derek Lankeaux</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Institution</div>
+                        <div class="meta-value">Rochester Institute of Technology</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Program</div>
+                        <div class="meta-value">MS Applied Statistics</div>
+                    </div>
+                </div>
+                <p>For questions or collaborations regarding the breast cancer classification project, please open an issue in the repository.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Project 2: Textbook Bias Detection</h3>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Author</div>
+                        <div class="meta-value">Derek Maxwell</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Institution</div>
+                        <div class="meta-value">University of San Diego</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Program</div>
+                        <div class="meta-value">Applied Data Science Master's</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Email</div>
+                        <div class="meta-value">dmaxwell@sandiego.edu</div>
+                    </div>
+                </div>
+                <p>For questions, suggestions, or collaborations regarding the textbook bias detection project, please open an issue in the repository or contact via email.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <hr>
+            <p><strong>Complete Research Portfolio</strong></p>
+            <p>Derek Lankeaux (RIT) & Derek Maxwell (USD)</p>
+            <p>Last Updated: November 2025 | Version: 1.0</p>
+            <p>Status: <span class="badge badge-success">Complete</span> <span class="badge badge-info">Production Ready</span></p>
+            <p style="margin-top: 20px; font-size: 9pt;">
+                This portfolio contains two comprehensive research projects demonstrating advanced machine learning,
+                statistical analysis, and Bayesian methods. All code and materials are available in the repository.
+            </p>
+            <p style="margin-top: 10px; font-size: 9pt;">
+                <strong>Citation:</strong> If using these materials in academic work, please cite appropriately.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
