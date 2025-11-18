@@ -3,115 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Derek Lankeaux">
+    <meta name="description" content="Enhanced Ensemble Methods for Wisconsin Breast Cancer Classification">
     <title>Enhanced Ensemble Methods for Wisconsin Breast Cancer Classification</title>
     <style>
-        @page {
-            size: A4;
-            margin: 2cm;
-        }
+        
 
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
-            max-width: 210mm;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             background: white;
+            font-size: 16px;
         }
 
         h1 {
-            font-size: 24pt;
+            font-size: 2.5em;
             color: #1a1a1a;
             margin-top: 30px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             page-break-after: avoid;
+            text-align: center;
+            font-weight: 700;
         }
 
         h2 {
-            font-size: 18pt;
+            font-size: 2em;
             color: #2a2a2a;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 8px;
             page-break-after: avoid;
+            font-weight: 600;
         }
 
         h3 {
-            font-size: 14pt;
+            font-size: 1.5em;
             color: #3a3a3a;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            margin-top: 25px;
+            margin-bottom: 15px;
             page-break-after: avoid;
+            font-weight: 600;
         }
 
         h4 {
-            font-size: 12pt;
+            font-size: 1.25em;
             color: #4a4a4a;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            page-break-after: avoid;
+            font-weight: 600;
+        }
+
+        h5, h6 {
+            font-size: 1.1em;
+            color: #5a5a5a;
             margin-top: 15px;
             margin-bottom: 8px;
             page-break-after: avoid;
+            font-weight: 600;
         }
 
         p {
-            margin: 10px 0;
+            margin: 12px 0;
             text-align: justify;
+            line-height: 1.7;
         }
 
         code {
             background-color: #f4f4f4;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            font-size: 10pt;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', 'Consolas', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+            border: 1px solid #e1e1e8;
         }
 
         pre {
             background-color: #f8f8f8;
             border: 1px solid #ddd;
+            border-left: 4px solid #0066cc;
             border-radius: 5px;
-            padding: 15px;
+            padding: 15px 20px;
             overflow-x: auto;
             page-break-inside: avoid;
+            margin: 20px 0;
         }
 
         pre code {
             background: none;
             padding: 0;
+            border: none;
+            color: #333;
+            font-size: 0.85em;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 25px 0;
             page-break-inside: avoid;
+            font-size: 0.95em;
         }
 
         th, td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 12px 15px;
             text-align: left;
         }
 
         th {
-            background-color: #f0f0f0;
+            background-color: #0066cc;
+            color: white;
             font-weight: bold;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
         }
 
         ul, ol {
-            margin: 10px 0;
-            padding-left: 30px;
+            margin: 15px 0;
+            padding-left: 40px;
         }
 
         li {
-            margin: 5px 0;
+            margin: 8px 0;
+            line-height: 1.6;
         }
 
         hr {
             border: none;
             border-top: 2px solid #ccc;
-            margin: 30px 0;
+            margin: 40px 0;
         }
 
         strong {
@@ -126,24 +160,43 @@
         a {
             color: #0066cc;
             text-decoration: none;
+            border-bottom: 1px dotted #0066cc;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #004499;
+            border-bottom: 1px solid #004499;
         }
 
-        @media print {
-            body {
-                background: white;
-            }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            font-style: italic;
+        }
 
-            h1, h2, h3, h4 {
-                page-break-after: avoid;
-            }
+        /* Header styling for author/date info */
+        .publication-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ccc;
+        }
 
-            p, table, pre {
-                page-break-inside: avoid;
-            }
+        .publication-header p {
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        /* Footer */
+        .publication-footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #ccc;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
         }
     </style>
 </head>
@@ -588,20 +641,87 @@
 
 <strong>High Multicollinearity Features (VIF > 10)</strong>:
 
-<p>| Rank | Feature | VIF Score | Interpretation |</p>
-<p>|------|---------|-----------|----------------|</p>
-<p>| 1 | perimeter_mean | 587.23 | Extreme multicollinearity |</p>
-<p>| 2 | area_mean | 421.56 | Extreme multicollinearity |</p>
-<p>| 3 | radius_mean | 389.12 | Extreme multicollinearity |</p>
-<p>| 4 | perimeter_worst | 298.45 | Extreme multicollinearity |</p>
-<p>| 5 | area_worst | 267.89 | Extreme multicollinearity |</p>
-<p>| 6 | radius_worst | 234.67 | Extreme multicollinearity |</p>
-<p>| 7 | concave_points_mean | 89.34 | High multicollinearity |</p>
-<p>| 8 | concavity_mean | 76.12 | High multicollinearity |</p>
-<p>| 9 | compactness_mean | 45.78 | High multicollinearity |</p>
-<p>| 10 | concave_points_worst | 32.45 | High multicollinearity |</p>
-<p>| 11 | concavity_worst | 28.91 | High multicollinearity |</p>
-<p>| 12 | compactness_worst | 21.34 | High multicollinearity |</p>
+<table>
+<thead><tr>
+<th>Rank</th>
+<th>Feature</th>
+<th>VIF Score</th>
+<th>Interpretation</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>perimeter_mean</td>
+<td>587.23</td>
+<td>Extreme multicollinearity</td>
+</tr>
+<tr>
+<td>2</td>
+<td>area_mean</td>
+<td>421.56</td>
+<td>Extreme multicollinearity</td>
+</tr>
+<tr>
+<td>3</td>
+<td>radius_mean</td>
+<td>389.12</td>
+<td>Extreme multicollinearity</td>
+</tr>
+<tr>
+<td>4</td>
+<td>perimeter_worst</td>
+<td>298.45</td>
+<td>Extreme multicollinearity</td>
+</tr>
+<tr>
+<td>5</td>
+<td>area_worst</td>
+<td>267.89</td>
+<td>Extreme multicollinearity</td>
+</tr>
+<tr>
+<td>6</td>
+<td>radius_worst</td>
+<td>234.67</td>
+<td>Extreme multicollinearity</td>
+</tr>
+<tr>
+<td>7</td>
+<td>concave_points_mean</td>
+<td>89.34</td>
+<td>High multicollinearity</td>
+</tr>
+<tr>
+<td>8</td>
+<td>concavity_mean</td>
+<td>76.12</td>
+<td>High multicollinearity</td>
+</tr>
+<tr>
+<td>9</td>
+<td>compactness_mean</td>
+<td>45.78</td>
+<td>High multicollinearity</td>
+</tr>
+<tr>
+<td>10</td>
+<td>concave_points_worst</td>
+<td>32.45</td>
+<td>High multicollinearity</td>
+</tr>
+<tr>
+<td>11</td>
+<td>concavity_worst</td>
+<td>28.91</td>
+<td>High multicollinearity</td>
+</tr>
+<tr>
+<td>12</td>
+<td>compactness_worst</td>
+<td>21.34</td>
+<td>High multicollinearity</td>
+</tr>
+</tbody></table>
 
 <strong>Key Findings</strong>:
 <ul>
@@ -645,16 +765,81 @@
 
 <strong>Comprehensive Performance Metrics</strong> (on SMOTE-balanced test set):
 
-<p>| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |</p>
-<p>|-------|----------|-----------|--------|----------|---------|</p>
-<p>| <strong>AdaBoost</strong> | <strong>0.9912</strong> | <strong>1.0000</strong> | <strong>0.9859</strong> | <strong>0.9929</strong> | <strong>0.9987</strong> |</p>
-<p>| <strong>Stacking</strong> | <strong>0.9895</strong> | <strong>0.9859</strong> | <strong>0.9859</strong> | <strong>0.9859</strong> | <strong>0.9982</strong> |</p>
-<p>| <strong>XGBoost</strong> | 0.9877 | 0.9859 | 0.9859 | 0.9859 | 0.9976 |</p>
-<p>| <strong>Voting</strong> | 0.9860 | 0.9859 | 0.9859 | 0.9859 | 0.9971 |</p>
-<p>| <strong>LightGBM</strong> | 0.9825 | 0.9714 | 0.9859 | 0.9786 | 0.9968 |</p>
-<p>| <strong>Random Forest</strong> | 0.9649 | 0.9429 | 0.9859 | 0.9640 | 0.9912 |</p>
-<p>| <strong>Gradient Boosting</strong> | 0.9649 | 0.9429 | 0.9859 | 0.9640 | 0.9901 |</p>
-<p>| <strong>Bagging</strong> | 0.9614 | 0.9429 | 0.9718 | 0.9571 | 0.9889 |</p>
+<table>
+<thead><tr>
+<th>Model</th>
+<th>Accuracy</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1 Score</th>
+<th>ROC-AUC</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>AdaBoost</strong></td>
+<td><strong>0.9912</strong></td>
+<td><strong>1.0000</strong></td>
+<td><strong>0.9859</strong></td>
+<td><strong>0.9929</strong></td>
+<td><strong>0.9987</strong></td>
+</tr>
+<tr>
+<td><strong>Stacking</strong></td>
+<td><strong>0.9895</strong></td>
+<td><strong>0.9859</strong></td>
+<td><strong>0.9859</strong></td>
+<td><strong>0.9859</strong></td>
+<td><strong>0.9982</strong></td>
+</tr>
+<tr>
+<td><strong>XGBoost</strong></td>
+<td>0.9877</td>
+<td>0.9859</td>
+<td>0.9859</td>
+<td>0.9859</td>
+<td>0.9976</td>
+</tr>
+<tr>
+<td><strong>Voting</strong></td>
+<td>0.9860</td>
+<td>0.9859</td>
+<td>0.9859</td>
+<td>0.9859</td>
+<td>0.9971</td>
+</tr>
+<tr>
+<td><strong>LightGBM</strong></td>
+<td>0.9825</td>
+<td>0.9714</td>
+<td>0.9859</td>
+<td>0.9786</td>
+<td>0.9968</td>
+</tr>
+<tr>
+<td><strong>Random Forest</strong></td>
+<td>0.9649</td>
+<td>0.9429</td>
+<td>0.9859</td>
+<td>0.9640</td>
+<td>0.9912</td>
+</tr>
+<tr>
+<td><strong>Gradient Boosting</strong></td>
+<td>0.9649</td>
+<td>0.9429</td>
+<td>0.9859</td>
+<td>0.9640</td>
+<td>0.9901</td>
+</tr>
+<tr>
+<td><strong>Bagging</strong></td>
+<td>0.9614</td>
+<td>0.9429</td>
+<td>0.9718</td>
+<td>0.9571</td>
+<td>0.9889</td>
+</tr>
+</tbody></table>
 
 <strong>Key Results</strong>:
 <ul>
@@ -779,12 +964,39 @@
 
 <strong>Performance Comparison</strong> (Original vs. SMOTE-balanced):
 
-<p>| Model | Original Recall | SMOTE Recall | Improvement |</p>
-<p>|-------|----------------|--------------|-------------|</p>
-<p>| AdaBoost | 0.925 | 0.986 | +6.6% |</p>
-<p>| Random Forest | 0.950 | 0.986 | +3.8% |</p>
-<p>| Gradient Boosting | 0.925 | 0.986 | +6.6% |</p>
-<p>| Stacking | 0.950 | 0.986 | +3.8% |</p>
+<table>
+<thead><tr>
+<th>Model</th>
+<th>Original Recall</th>
+<th>SMOTE Recall</th>
+<th>Improvement</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>AdaBoost</td>
+<td>0.925</td>
+<td>0.986</td>
+<td>+6.6%</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>0.950</td>
+<td>0.986</td>
+<td>+3.8%</td>
+</tr>
+<tr>
+<td>Gradient Boosting</td>
+<td>0.925</td>
+<td>0.986</td>
+<td>+6.6%</td>
+</tr>
+<tr>
+<td>Stacking</td>
+<td>0.950</td>
+<td>0.986</td>
+<td>+3.8%</td>
+</tr>
+</tbody></table>
 
 <strong>Key Findings</strong>:
 <ul>
@@ -889,14 +1101,51 @@
 
 <p>Our results compare favorably with published literature:</p>
 
-<p>| Study | Method | Accuracy | ROC-AUC |</p>
-<p>|-------|--------|----------|---------|</p>
-<p>| Wolberg et al. (1995) | Linear Programming | 97.5% | - |</p>
-<p>| Akay (2009) | SVM + Feature Selection | 99.5% | - |</p>
-<p>| Çinar et al. (2013) | Random Forest | 97.9% | - |</p>
-<p>| Asri et al. (2016) | SVM | 97.4% | - |</p>
-<p>| <strong>This Study (2025)</strong> | <strong>AdaBoost + SMOTE</strong> | <strong>99.1%</strong> | <strong>0.9987</strong> |</p>
-<p>| <strong>This Study (2025)</strong> | <strong>Stacking</strong> | <strong>98.9%</strong> | <strong>0.9982</strong> |</p>
+<table>
+<thead><tr>
+<th>Study</th>
+<th>Method</th>
+<th>Accuracy</th>
+<th>ROC-AUC</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Wolberg et al. (1995)</td>
+<td>Linear Programming</td>
+<td>97.5%</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Akay (2009)</td>
+<td>SVM + Feature Selection</td>
+<td>99.5%</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Çinar et al. (2013)</td>
+<td>Random Forest</td>
+<td>97.9%</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Asri et al. (2016)</td>
+<td>SVM</td>
+<td>97.4%</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>This Study (2025)</strong></td>
+<td><strong>AdaBoost + SMOTE</strong></td>
+<td><strong>99.1%</strong></td>
+<td><strong>0.9987</strong></td>
+</tr>
+<tr>
+<td><strong>This Study (2025)</strong></td>
+<td><strong>Stacking</strong></td>
+<td><strong>98.9%</strong></td>
+<td><strong>0.9982</strong></td>
+</tr>
+</tbody></table>
 
 <p>Our comprehensive approach achieves competitive accuracy while providing:</p>
 <ul>
@@ -1193,16 +1442,45 @@
 
 <h3>Appendix C: Model Training Times</h3>
 
-<p>| Model | Training Time (seconds) |</p>
-<p>|-------|------------------------|</p>
-<p>| Random Forest | 2.34 |</p>
-<p>| Gradient Boosting | 8.12 |</p>
-<p>| AdaBoost | 3.67 |</p>
-<p>| Bagging | 1.89 |</p>
-<p>| XGBoost | 1.23 |</p>
-<p>| LightGBM | 0.87 |</p>
-<p>| Voting | 12.45 |</p>
-<p>| Stacking | 18.92 |</p>
+<table>
+<thead><tr>
+<th>Model</th>
+<th>Training Time (seconds)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Random Forest</td>
+<td>2.34</td>
+</tr>
+<tr>
+<td>Gradient Boosting</td>
+<td>8.12</td>
+</tr>
+<tr>
+<td>AdaBoost</td>
+<td>3.67</td>
+</tr>
+<tr>
+<td>Bagging</td>
+<td>1.89</td>
+</tr>
+<tr>
+<td>XGBoost</td>
+<td>1.23</td>
+</tr>
+<tr>
+<td>LightGBM</td>
+<td>0.87</td>
+</tr>
+<tr>
+<td>Voting</td>
+<td>12.45</td>
+</tr>
+<tr>
+<td>Stacking</td>
+<td>18.92</td>
+</tr>
+</tbody></table>
 
 <h3>Appendix D: Code Availability</h3>
 
@@ -1276,5 +1554,10 @@
 
 <strong>END OF PUBLICATION</strong>
 
+<div class="publication-footer">
+    <p>Generated on 2025-11-18 03:41:54</p>
+    <p>Enhanced Ensemble Methods for Wisconsin Breast Cancer Classification</p>
+    <p>&copy; 2025 Derek Lankeaux - Rochester Institute of Technology</p>
+</div>
 </body>
 </html>

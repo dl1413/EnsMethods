@@ -88,12 +88,63 @@ EnsMethods/
 ├── Derek_Lankeaux_RIT_MS_Applied_Statistics_Capstone DRAFT.pdf
 ├── requirements.txt                        # Python dependencies
 ├── README.md                              # This file
+├── FINAL_PUBLICATION.md                   # Research publication (source)
+├── publish_outputs.py                     # Publication output generator
+├── PUBLISHING_GUIDE.md                    # Publishing documentation
+├── FINAL_PUBLICATION.html                 # Generated web version
+├── FINAL_PUBLICATION_PDF_READY.html       # Generated PDF-ready version
+├── COMPLETE_PROJECT_PUBLICATION.html      # Complete publication HTML
+├── Enhanced Ensemble Methods.pdf          # Final PDF publication
 └── models/                                # Saved models (generated after running)
     ├── best_model_*.pkl
     ├── scaler.pkl
     ├── feature_names.pkl
     └── *_model.pkl
 ```
+
+---
+
+## 📄 Publication Outputs
+
+This project includes a comprehensive publication system for generating research outputs in multiple formats.
+
+### Quick Start - Generate Publications
+
+```bash
+python3 publish_outputs.py
+```
+
+This generates:
+- **Standard HTML** - For web viewing and sharing
+- **PDF-Ready HTML** - Optimized for PDF conversion
+- **Complete Publication** - Comprehensive standalone document
+
+### Available Publications
+
+1. **Research Paper** (`FINAL_PUBLICATION.md`)
+   - Comprehensive 28-page academic publication
+   - Complete methodology, results, and discussion
+   - References and appendices included
+
+2. **HTML Versions** (auto-generated)
+   - Web-optimized format
+   - PDF-ready format with print styles
+   - Complete project publication
+
+3. **PDF Version**
+   - Generate from `FINAL_PUBLICATION_PDF_READY.html`
+   - Open in browser → Print → Save as PDF
+   - See `PUBLISHING_GUIDE.md` for details
+
+### Converting to PDF
+
+1. Open `FINAL_PUBLICATION_PDF_READY.html` in your browser
+2. Press `Ctrl+P` (or `Cmd+P` on Mac)
+3. Select "Save as PDF"
+4. Use recommended settings (A4, default margins)
+5. Save as `Enhanced Ensemble Methods for Wisconsin Breast Cancer Classification.pdf`
+
+For more details, see [PUBLISHING_GUIDE.md](PUBLISHING_GUIDE.md)
 
 ---
 
