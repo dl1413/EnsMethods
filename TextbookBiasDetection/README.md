@@ -37,6 +37,12 @@ This project implements a novel methodological framework for detecting and quant
 - ✅ **Validation Framework**: Expert agreement correlations
 - ✅ **Professional Visualizations**: Publication-quality plots
 
+### 5. **Performance Optimization**
+- ✅ **Performance Documentation**: Code analyzed for efficiency
+- ✅ **Optimization Opportunities**: Documented parallel analysis improvements
+- ✅ **Scalability Notes**: Guidance for larger datasets
+- ✅ **Detailed Analysis**: See `PERFORMANCE_OPTIMIZATION.md`
+
 ---
 
 ## 📊 Dataset
@@ -311,6 +317,29 @@ with pm.Model() as hierarchical_model:
 - **CPU**: Multi-core processor for Bayesian sampling
 - **GPU**: Optional, speeds up transformer models
 - **Storage**: 2GB for models and results
+
+### Performance Notes
+- **Parallel Analysis**: 100 simulations take ~30-60 seconds (could be parallelized for 2-4x speedup)
+- **Factor Analysis**: Optimized through factor-analyzer library
+- **Data Generation**: Efficient for datasets up to 1000s of textbooks
+- See `PERFORMANCE_OPTIMIZATION.md` for detailed analysis and improvement suggestions
+
+---
+
+## ⚡ Performance Optimization
+
+This project has been analyzed for performance bottlenecks. Key findings:
+
+### Current Performance
+- **Data generation**: Fast (<1 second for 150 textbooks)
+- **Parallel analysis**: Moderate (~30-60 seconds, could be improved)
+- **Factor analysis**: Efficient (using optimized libraries)
+
+### Optimization Opportunities
+1. **Parallel Analysis Loop**: Could benefit from joblib.Parallel for 2-4x speedup
+2. **DataFrame Operations**: Already efficient for current scale
+
+For detailed performance analysis and optimization suggestions, see [`PERFORMANCE_OPTIMIZATION.md`](PERFORMANCE_OPTIMIZATION.md).
 
 ---
 
